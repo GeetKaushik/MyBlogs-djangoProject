@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>carousel</title>
+		<style>
+			.c-img {
+				height: 500px;
+				object-fit: cover;
+				object-position: 15% 100%;
+				@media only screen and (max-width: 600px) {
+					height: 300px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+			<div class="carousel-inner">
+				<div class="carousel-item active c-item">
+					<img
+						src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YXVyb3JhfGVufDB8fDB8fHww"
+						class="d-block w-100 c-img"
+						alt="..." />
+					<div class="carousel-caption d-md-block">
+						<h5>First slide label</h5>
+						<p>Some representative placeholder content for the first slide.</p>
+					</div>
+				</div>
+				<div class="carousel-item c-item">
+					<img
+						src="https://images.unsplash.com/photo-1577456020912-85d0604ad403?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGF1cm9yYXxlbnwwfHwwfHx8MA%3D%3D"
+						class="d-block w-100 c-img"
+						alt="..." />
+					<div class="carousel-caption d-md-block">
+						<h5>Second slide label</h5>
+						<p>Some representative placeholder content for the first slide.</p>
+					</div>
+				</div>
+				<div class="carousel-item c-item">
+					<img
+						src="https://images.unsplash.com/photo-1571371867188-fdc3f1f8e62d?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGF1cm9yYXxlbnwwfHwwfHx8MA%3D%3D"
+						class="d-block w-100 c-img"
+						alt="..." />
+					<div class="carousel-caption d-md-block">
+						<h5>Third slide label</h5>
+						<p>Some representative placeholder content for the first slide.</p>
+					</div>
+				</div>
+			</div>
+			<button
+				class="carousel-control-prev"
+				type="button"
+				data-bs-target="#carouselExampleFade"
+				data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+			</button>
+			<button
+				class="carousel-control-next"
+				type="button"
+				data-bs-target="#carouselExampleFade"
+				data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+			</button>
+		</div>
+	</body>
+</html>

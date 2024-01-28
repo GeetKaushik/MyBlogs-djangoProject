@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="shortcut icon"
+			href="https://cdn-icons-png.flaticon.com/128/763/763789.png"
+			type="image/x-icon" />
+		<title>Subscription</title>
+	</head>
+	<body>
+		{% include "./navbar.html" %}
+
+		<section id="membership form">
+			<div class="container text-center">
+				<img
+					src="https://media.tenor.com/MA-XV-95YuwAAAAC/dancing-cat.gif"
+					alt="subscription dance"
+					width="20%"
+					class="rounded" />
+			</div>
+
+			<div class="container-fluid w-50 bg-light rounded mt-4">
+				{% if feedback %}
+				<h3 class="alert alert-success">{{ feedback }}</h3>
+				{% endif %}
+				<form method="POST" action="">
+					{% csrf_token %}
+
+					<div class="mb-3">
+						<label for="usremail" class="form-label"> Email address </label>
+						<input
+							type="email"
+							class="form-control"
+							id="usremail"
+							aria-describedby="emailHelp"
+							name="usremail"
+							required />
+						<div id="emailHelp" class="form-text">
+							We'll never share your email with anyone else.
+						</div>
+					</div>
+
+					<div class="d-flex gap-3 justify-content-center">
+						<input
+							type="radio"
+							class="btn-check"
+							name="usrmembership"
+							id="free"
+							autocomplete="off"
+							value="Free"
+							checked />
+						<label class="btn btn-outline-danger bg-gradient" for="free">
+							Free membership
+						</label>
+						
+						<input
+							type="radio"
+							class="btn-check"
+							name="usrmembership"
+							id="silver"
+							value="Silver"
+							autocomplete="off" />
+						<label class="btn btn-outline-secondary bg-gradient" for="silver">
+							Silver membership
+						</label>
+
+						<input
+							type="radio"
+							class="btn-check"
+							name="usrmembership"
+							id="gold"
+							value="Gold"
+							autocomplete="off" />
+						<label class="btn btn-outline-warning bg-gradient" for="gold">
+							Gold membership
+						</label>
+
+						<input
+							type="radio"
+							class="btn-check"
+							name="usrmembership"
+							id="diamond"
+							value="Diamond"
+							autocomplete="off" />
+						<label class="btn btn-outline-primary bg-gradient" for="diamond">
+							Diamond membership
+						</label>
+					</div>
+
+					<div class="text-center mt-2">
+						<button type="submit" class="btn btn-success">Submit</button>
+					</div>
+				</form>
+			</div>
+		</section>
+	</body>
+</html>

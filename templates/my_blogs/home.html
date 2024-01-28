@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>My Blogs</title>
+		<link
+			rel="shortcut icon"
+			href="https://cdn-icons-png.flaticon.com/128/763/763789.png"
+			type="image/x-icon" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+			crossorigin="anonymous" />
+	</head>
+	<body>
+		<header>{% include "./navbar.html" %}</header>
+
+		<main>
+			<section id="Carousel">
+				<!-- Carousel section Starts -->
+				{% include "./carousel.html" %}
+				<!-- Carousel section ends -->
+			</section>
+
+			<section id="Featured">
+				{% comment %} Featured Starts {% endcomment %}
+				<div id="blog" class="container p-4 card mt-4">
+					<div class="text-center">
+						<img
+							src="https://media1.tenor.com/m/6hVEKMxmQLUAAAAC/cat-laptop.gif"
+							alt="cat on laptop"
+							class="rounded" />
+					</div>
+
+					<h1 class="text-center text-decoration-underline">Cat on Work</h1>
+					<p>
+						meow meow meowwwwww meowww. meowww meoww meoww? meoww meowww
+						meowwwwww meow meow meowwwwww meowww. meowww meoww meoww? meoww
+						meowww meowwwwww. meow meow meowwwwww meowww. meowww oww meoww?
+						meoww meowww meowwwwww? meow meow meowwwwww meowww. meowww meoww
+						meoww? meoww meowww meowwwwww! meow meow meowwwwww meowww. meowww
+						meoww meoww? meoww meowww meowwwwww meow meow meowwwwww meowww.
+						meowww meoww meoww? meoww meowww meowwwwwwmeow meow meowwwwww
+						meowww. meowww meoww meoww? meoww meowww meowwwwww meow meow
+						meowwwwww meowww. meowww meoww meoww? meoww meowww meowwwwwwmeow
+						meow meowwwwww meowww. meowww meoww meoww? meoww meowww
+						meowwwwwwmeow meow meowwwwww meowww. meowww meoww meoww? meoww
+						meowww meowwwwwwmeow meow meowwwwww meowww. meowww meoww meoww?
+						meoww meowww meowwwwww
+					</p>
+					<p>
+						meow meow meowwwwww meowww. meowww meoww meoww? meoww meowww
+						meowwwwww meow meow meowwwwww meowww. meowww meoww meoww? meoww
+						meowww meowwwwww. meow meow meowwwwww meowww. meowww meoww meoww?
+						meoww meowww meowwwwww? meow meow meowwwwww meowww. meowww meoww
+						meoww? meoww meowww meowwwwww! meowwwwww meowww. meowww meoww meoww?
+						meoww meowww meowwwwww meow meow meowwwwww meowww. meowww meoww
+						meoww?
+					</p>
+				</div>
+				{% comment %} Featured Ends {% endcomment %}
+			</section>
+
+			<section id="Blog_category_cards">
+				<!--Cards Section Starts -->
+
+				{% if category %}
+				<div class="d-flex flex-wrap justify-content-evenly mt-4 mb-4">
+					{% for y in category %}
+					<div class="card m-2" style="width: 20rem">
+						<img
+							src="{{ y.blog_cat_img.url }}"
+							class="card-img-top"
+							alt="..." />
+						<div class="card-body">
+							<h5 class="card-title">{{ y.blog_cat }}</h5>
+							<p class="card-text">{{ y.blog_cat_description }}</p>
+							<a href="#" class="btn btn-primary">Go somewhere</a>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+
+				{% endif %}
+
+				<!-- Cards Section Ends -->
+			</section>
+		</main>
+
+		<footer>{% include "./footer.html" %}</footer>
+		<!--Start of Tawk.to Script-->
+		<script type="text/javascript">
+			var Tawk_API = Tawk_API || {},
+				Tawk_LoadStart = new Date();
+			(function () {
+				var s1 = document.createElement("script"),
+					s0 = document.getElementsByTagName("script")[0];
+				s1.async = true;
+				s1.src = "https://embed.tawk.to/65b0b2fd0ff6374032c41fb4/1hkt3mbvc";
+				s1.charset = "UTF-8";
+				s1.setAttribute("crossorigin", "*");
+				s0.parentNode.insertBefore(s1, s0);
+			})();
+		</script>
+		<!--End of Tawk.to Script-->
+	</body>
+</html>

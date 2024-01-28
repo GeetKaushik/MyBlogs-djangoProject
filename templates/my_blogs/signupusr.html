@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Signup</title>
+		<link
+			rel="shortcut icon"
+			href="https://cdn-icons-png.flaticon.com/128/763/763789.png"
+			type="image/x-icon" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+			crossorigin="anonymous" />
+	</head>
+	<body>
+		<main>
+			<div class="text-center mt-2">
+				<img
+					src="https://res.cloudinary.com/practicaldev/image/fetch/s--u_IenNc5--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://media1.tenor.com/images/8f7a28e62f8242b264c8a39ba8bea261/tenor.gif%3Fitemid%3D15922897"
+					alt=""
+					class="rounded w-50" />
+			</div>
+			<div
+				class="container rounded bg-body-secondary p-2 w-50 d-flex flex-column mt-2 justify-content-center mb-2"
+				>
+				{% if Error %}
+				<h5 class="alert alert-warning text-center">{{ Error }}</h5>
+				{% endif %}
+				<form method="POST" action="">
+					{% csrf_token %}
+                    <div>
+                        <h2 class="text-center text-decoration-underline">Signup</h2>
+                    </div>
+					<div>{{ SignupForm.as_p }}</div>
+					<div class="text-center">
+                        
+						<button class="btn btn-primary">Signup</button>
+					</div>
+				</form>
+			</div>
+		</main>
+		<footer>{% include "./footer.html" %}</footer>
+	</body>
+</html>

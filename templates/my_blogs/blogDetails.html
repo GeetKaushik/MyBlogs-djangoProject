@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Blog_Details</title>
+		<link
+			rel="shortcut icon"
+			href="https://cdn-icons-png.flaticon.com/128/763/763789.png"
+			type="image/x-icon" />
+		<style>
+			.card-img-top {
+				width: 100%;
+				height: 45vw;
+				object-fit: cover;
+				object-position: top;
+			}
+		</style>
+	</head>
+	<body>
+		<header>{% include "./navbar.html" %}</header>
+		<main>
+			<div class="container">
+				<div class="card mt-2 m-auto" style="width: 90%">
+					<img src="{{ obj.cover_img.url }}" class="card-img-top" alt="..." />
+					<div class="card-body">
+						<h5 class="card-title text-center text-decoration-underline h3 mb-5 bg-body-secondary p-3 rounded">
+							{{ obj.blog_name }}
+						</h5>
+						<p class="card-text">{{ obj.blog_description | safe }}</p>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<footer>{% include "./footer.html" %}</footer>
+	</body>
+</html>
